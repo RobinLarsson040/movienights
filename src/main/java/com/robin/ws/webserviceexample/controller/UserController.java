@@ -20,12 +20,18 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
-    public String getUser() {
-        return "user was called";
+    @RequestMapping(path = "/{id}", produces = {"application/json", "application/xml"}, method = RequestMethod.GET)
+    public UserResponseModel getUser(@PathVariable String id) {
+        UserResponseModel response = new UserResponseModel();
+
+        UserDto userDto = userService.getUserById(id);
+        BeanUtils.copyProperties(userDto, response);
+
+        return response;
     }
 
-    @PostMapping
+    @RequestMapping(consumes = {"application/json", "application/xml"},
+            produces = {"application/json", "application/xml"}, method = RequestMethod.POST)
     public UserResponseModel createUser(@RequestBody UserDetailsRequestModel userDetails) {
         UserResponseModel returnValue = new UserResponseModel();
         UserDto userDto = new UserDto();

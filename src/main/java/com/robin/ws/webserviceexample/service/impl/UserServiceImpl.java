@@ -3,10 +3,13 @@ package com.robin.ws.webserviceexample.service.impl;
 import com.robin.ws.webserviceexample.Utils;
 import com.robin.ws.webserviceexample.dto.UserDto;
 import com.robin.ws.webserviceexample.entity.UserEntity;
+import com.robin.ws.webserviceexample.exceptions.UserServiceException;
+import com.robin.ws.webserviceexample.models.response.ErrorMessages;
 import com.robin.ws.webserviceexample.repository.UserRepository;
 import com.robin.ws.webserviceexample.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -33,7 +36,7 @@ public class UserServiceImpl implements UserService {
     public UserDto createUser(UserDto user) {
 
         if (userRepository.findUserByEmail(user.getEmail()) != null) {
-            throw new RuntimeException("Record already exists");
+            throw new UserServiceException(ErrorMessages.RECORD_ALREADY_EXISTS.toString());
         }
 
         UserEntity userEntity = new UserEntity();
@@ -58,6 +61,18 @@ public class UserServiceImpl implements UserService {
             throw new UsernameNotFoundException(email);
         }
         UserDto returnValue = new UserDto();
+        BeanUtils.copyProperties(userEntity, returnValue);
+        return returnValue;
+    }
+
+    @Override
+    public UserDto getUserById(String id) {
+        UserEntity userEntity = userRepository.findByUserId(id);
+        UserDto returnValue = new UserDto();
+
+        if (userEntity == null) {
+            throw new UsernameNotFoundException(id);
+        }
         BeanUtils.copyProperties(userEntity, returnValue);
         return returnValue;
     }
