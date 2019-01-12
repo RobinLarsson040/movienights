@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
+import java.util.Date;
 
 @Entity(name = "users")
 public class UserEntity implements Serializable {
@@ -17,7 +18,6 @@ public class UserEntity implements Serializable {
 
     @Column(nullable = false)
     private String userId;
-
     @Column(nullable = false, length = 50)
     private String firstName;
     @Column(nullable = false, length = 50)
@@ -26,11 +26,10 @@ public class UserEntity implements Serializable {
     private String email;
     @Column(nullable = false)
     private String encryptedPassword;
+    private String accesToken;
+    private String refreshToken;
+    private long exparationTime;
 
-    private String emailVerificationToken;
-
-    @Column(nullable = false)
-    private Boolean emailVerificationStatus = false;
 
     public long getId() {
         return id;
@@ -80,19 +79,31 @@ public class UserEntity implements Serializable {
         this.encryptedPassword = encryptedPassword;
     }
 
-    public String getEmailVerificationToken() {
-        return emailVerificationToken;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
-    public void setEmailVerificationToken(String emailVerificationToken) {
-        this.emailVerificationToken = emailVerificationToken;
+    public String getAccesToken() {
+        return accesToken;
     }
 
-    public Boolean getEmailVerificationStatus() {
-        return emailVerificationStatus;
+    public void setAccesToken(String accesToken) {
+        this.accesToken = accesToken;
     }
 
-    public void setEmailVerificationStatus(Boolean emailVerificationStatus) {
-        this.emailVerificationStatus = emailVerificationStatus;
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
+    public long getExparationTime() {
+        return exparationTime;
+    }
+
+    public void setExparationTime(long exparationTime) {
+        this.exparationTime = exparationTime;
     }
 }

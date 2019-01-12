@@ -1,7 +1,9 @@
 package com.robin.ws.webserviceexample.security;
 
 import com.robin.ws.webserviceexample.service.UserService;
+import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -10,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-
+@Order(2)
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
@@ -27,7 +29,8 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL)
+                .antMatchers(HttpMethod.GET,"/","/main.js").permitAll()
+                .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL,"/api/users/login")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

@@ -5,6 +5,7 @@ import com.robin.ws.webserviceexample.SpringApplicationContext;
 import com.robin.ws.webserviceexample.dto.UserDto;
 import com.robin.ws.webserviceexample.models.request.UserLoginRequestModel;
 import com.robin.ws.webserviceexample.service.UserService;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
             throws AuthenticationException {
+        System.out.println("LOGGING IN");
         try {
             UserLoginRequestModel credentials = new ObjectMapper()
                     .readValue(request.getInputStream(), UserLoginRequestModel.class);
@@ -51,7 +53,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
                                             Authentication auth) throws IOException, ServletException {
-
+        System.out.println("SUCCESFULLY LOGGED IN");
         String userName = ((User) auth.getPrincipal()).getUsername();
 
         String token = Jwts.builder()
