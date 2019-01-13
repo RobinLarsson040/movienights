@@ -17,13 +17,17 @@ import java.util.List;
 @RestController
 public class OmdbController {
 
-    @Autowired
-    MovieRepository movieRepository;
+    final MovieRepository movieRepository;
     @Value("${omdb-url}")
     private String OMDB_URL;
 
+    @Autowired
+    public OmdbController(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
 
-    @GetMapping("/api/searchMovieById")
+
+    @GetMapping("movieById")
     public MovieEntity getMovieById(@RequestParam String id) {
         RestTemplate restTemplate = new RestTemplate();
         MovieEntity movieEntity = movieRepository.findMovieEntityByImdbID(id);
@@ -39,13 +43,15 @@ public class OmdbController {
             searchResult = restTemplate.getForObject(builder.toUriString(), MovieEntity.class);
             if (searchResult == null) {
                 ////MOVIE ID NOT FOUND
+            } else {
+                movieRepository.save(searchResult);
             }
         }
         return searchResult;
     }
 
 
-    @GetMapping("/api/searchMovieByTitle")
+    @GetMapping("movieByTitle")
     public List<MovieEntity> getMovieByTitle(@RequestParam String title) {
         RestTemplate restTemplate = new RestTemplate();
         MovieEntity movieEntity = movieRepository.findMovieEntityByTitle(title);

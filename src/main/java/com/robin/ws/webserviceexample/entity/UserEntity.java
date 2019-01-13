@@ -29,7 +29,15 @@ public class UserEntity implements Serializable {
     private String accesToken;
     private String refreshToken;
     private long exparationTime;
+    private String gMail;
 
+    public String getgMail() {
+        return gMail;
+    }
+
+    public void setgMail(String gMail) {
+        this.gMail = gMail;
+    }
 
     public long getId() {
         return id;

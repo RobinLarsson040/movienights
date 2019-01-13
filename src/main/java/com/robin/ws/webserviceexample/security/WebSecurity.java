@@ -30,7 +30,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/","/main.js").permitAll()
-                .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL,"/api/users/login")
+                .antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL,"/login")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -48,7 +48,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 
     public AuthenticationFilter authenticationFilter() throws Exception {
         AuthenticationFilter filter = new AuthenticationFilter(authenticationManager());
-        filter.setFilterProcessesUrl("/api/users/login");
+        filter.setFilterProcessesUrl("/login");
         return filter;
     }
 

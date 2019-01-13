@@ -1,6 +1,7 @@
 package com.robin.ws.webserviceexample.controller;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeTokenRequest;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
@@ -51,11 +52,22 @@ public class GoogleController {
         String refreshToken = tokenResponse.getRefreshToken();
         Long expiresAt = System.currentTimeMillis() + (tokenResponse.getExpiresInSeconds() * 1000);
 
+        GoogleIdToken idToken = null;
+        try {
+            idToken = tokenResponse.parseIdToken();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        GoogleIdToken.Payload payload = idToken.getPayload();
+        String email = payload.getEmail();
+
         UserEntity userEntity = userRepository.findUserByEmail(authentication.getName());
 
         userEntity.setAccesToken(accessToken);
         userEntity.setRefreshToken(refreshToken);
         userEntity.setExparationTime(expiresAt);
+        userEntity.setgMail(email);
+
 
         userRepository.save(userEntity);
 

@@ -42,15 +42,4 @@ public class UserController {
         return returnValue;
     }
 
-    @PutMapping
-    public String updateUser() {
-        return "update user was called";
-    }
-
-    @DeleteMapping
-    public String deleteUser() {
-        return "delete user was called";
-    }
-
-
 }
