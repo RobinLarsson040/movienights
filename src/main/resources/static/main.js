@@ -26,7 +26,7 @@ $('#loginForm').submit(function (e) {
     console.log("LOGIN");
     $.ajax({
         type: "POST",
-        url: 'http://localhost:8080/api/users/login',
+        url: 'http://localhost:8080/login',
         data: JSON.stringify({
             email: $("#email").val(),
             password: $("#password").val()

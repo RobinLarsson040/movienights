@@ -7,12 +7,14 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar;
+import com.google.api.services.calendar.model.EventAttendee;
+import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 import com.robin.ws.webserviceexample.entity.UserEntity;
 import com.robin.ws.webserviceexample.models.Event;
 import com.robin.ws.webserviceexample.repository.UserRepository;
-import org.joda.time.Interval;
-import org.joda.time.LocalDate;
+import org.apache.commons.lang3.time.DateUtils;
+import org.joda.time.DateTimeUtils;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.BeanUtils;
@@ -21,11 +23,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class CalendarService {
@@ -88,8 +88,9 @@ public class CalendarService {
                     System.out.println("ERROR");
                     e.printStackTrace();
                 }
-                System.out.println(newCredentials.getAccessToken());
                 user.setAccesToken(newCredentials.getAccessToken());
+                long newExpiresAt = System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(59);
+                user.setExparationTime(newExpiresAt);
                 userRepository.save(user);
             }
         });
@@ -142,11 +143,50 @@ public class CalendarService {
 
 
     private Calendar getCalendar(String email) {
-        UserEntity user = userRepository.findUserByEmail(email);
+        UserEntity user = userRepository.findUserByGMail(email);
         GoogleCredential credential = new GoogleCredential().setAccessToken(user.getAccesToken());
         return new Calendar.Builder(new NetHttpTransport(), JacksonFactory.getDefaultInstance(), credential)
                 .setApplicationName("MovieNights")
                 .build();
+    }
+
+    public com.google.api.services.calendar.model.Event bookEvent(String summary, String startTimeString,
+                                                                  String createdByGmail) {
+        updateAllTokens();
+        List<UserEntity> users = (List<UserEntity>) userRepository.findAll();
+        List<EventAttendee> allAttendees = new ArrayList<>();
+        com.google.api.services.calendar.model.Event event = new com.google.api.services.calendar.model.Event();
+        org.joda.time.DateTime jodaDateTime = convertStringToDateTime(startTimeString).plusHours(18);
+
+        DateTime startTime = new DateTime(jodaDateTime.toString());
+
+        users.forEach(user -> {
+            System.out.println(user.getgMail());
+            event.setSummary(summary);
+            event.setDescription("MovieNight");
+            EventDateTime start = new EventDateTime()
+                    .setDateTime(startTime);
+            event.setStart(start);
+
+            org.joda.time.DateTime end = new org.joda.time.DateTime(startTime.getValue()).plusHours(6);
+            DateTime endDateTime = new DateTime(end.toString());
+
+            EventDateTime eventDateTimeEnd = new EventDateTime()
+                    .setDateTime(endDateTime);
+            event.setEnd(eventDateTimeEnd);
+
+            if (!user.getgMail().equals(createdByGmail)) {
+                allAttendees.add(new EventAttendee().setEmail(user.getgMail()));
+                event.setAttendees(allAttendees);
+            }
+            try {
+                getCalendar(user.getgMail()).events().insert("primary", event).execute();
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+                e.printStackTrace();
+            }
+        });
+        return event;
     }
 
     private boolean hasTokenExpired(long expiresAt, long now) {

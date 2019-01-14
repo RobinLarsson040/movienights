@@ -1,23 +1,32 @@
 package com.robin.ws.webserviceexample.models;
 
-public class Event {
-    private String id;
-    private String startTime;
-    private String endTime;
-    private String summary;
-    private String description;
-    private String location;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Event {
+    @JsonProperty("startTime")
+    private String startTime;
+    @JsonProperty("endTime")
+    private String endTime;
+    @JsonProperty("summary")
+    private String summary;
+    @JsonProperty("description")
+    private String description;
+    @JsonProperty("location")
+    private String location;
+    @JsonProperty("createdBy")
+    private String createdBy;
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
 
     public Event() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getStartTime() {

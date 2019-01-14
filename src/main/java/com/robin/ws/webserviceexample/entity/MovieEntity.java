@@ -10,7 +10,6 @@ import javax.persistence.Id;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MovieEntity {
     @Id
-    private String id;
     @JsonProperty("Title")
     private String title;
     @JsonProperty("Year")
@@ -23,20 +22,11 @@ public class MovieEntity {
     public MovieEntity() {
     }
 
-    public MovieEntity(String id, String title, String year, String imdbID, String poster) {
-        this.id = id;
+    public MovieEntity(String title, String year, String imdbID, String poster) {
         this.title = title;
         this.year = year;
         this.imdbID = imdbID;
         this.poster = poster;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
