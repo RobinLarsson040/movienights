@@ -22,9 +22,11 @@ public class Interceptor extends HandlerInterceptorAdapter {
             Object handler) {
 
         long startTime = Instant.now().toEpochMilli();
-        logger.info("Request URL::" + request.getRequestURL().toString() +
-                ":: Start Time=" + Instant.now() + ":: USER=" + request.getUserPrincipal().getName());
-        request.setAttribute("startTime", startTime);
+        if (request.getUserPrincipal() != null) {
+            logger.info("Request URL::" + request.getRequestURL().toString() +
+                    ":: Start Time=" + Instant.now() + ":: USER=" + request.getUserPrincipal().getName());
+            request.setAttribute("startTime", startTime);
+        }
         return true;
     }
 

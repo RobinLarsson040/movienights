@@ -44,7 +44,8 @@ public class OmdbController {
                     .queryParam("i", id);
 
             searchResult = restTemplate.getForObject(builder.toUriString(), MovieEntity.class);
-            if (searchResult == null) {
+
+            if (searchResult.getImdbID() == null) {
                 throw new ResponseStatusException(HttpStatus.NO_CONTENT,
                         ErrorMessages.NO_MOVIE_FOUND.toString());
             } else {
