@@ -22,8 +22,12 @@ public class GoogleController {
     @Value("${client-secret}")
     private String CLIENT_SECRET;
 
+    final  UserRepository userRepository;
+
     @Autowired
-    UserRepository userRepository;
+    public GoogleController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
 
     @RequestMapping(value = "/storeauthcode", method = RequestMethod.POST)

@@ -1,7 +1,6 @@
 package com.robin.ws.webserviceexample.security;
 
 import com.robin.ws.webserviceexample.service.UserService;
-import org.apache.http.protocol.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
@@ -20,7 +19,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
-    public WebSecurity(BCryptPasswordEncoder bCryptPasswordEncoder, UserService userService) {
+    public WebSecurity(BCryptPasswordEncoder bCryptPasswordEncoder, UserService userService ) {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.userService = userService;
     }

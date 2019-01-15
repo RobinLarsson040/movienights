@@ -12,6 +12,7 @@ import com.google.api.services.calendar.model.EventDateTime;
 import com.google.api.services.calendar.model.Events;
 import com.robin.ws.webserviceexample.entity.UserEntity;
 import com.robin.ws.webserviceexample.models.Event;
+import com.robin.ws.webserviceexample.models.response.ErrorMessages;
 import com.robin.ws.webserviceexample.repository.UserRepository;
 import org.apache.commons.lang3.time.DateUtils;
 import org.joda.time.DateTimeUtils;
@@ -20,7 +21,9 @@ import org.joda.time.format.DateTimeFormatter;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,7 +64,8 @@ public class CalendarService {
                         .setSingleEvents(true)
                         .execute();
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        ErrorMessages.GOOGLE_CALENDAR_EVENTS_FETCH.toString());
             }
             events.getItems().forEach(item -> {
                 Event event = new Event();
@@ -182,8 +186,8 @@ public class CalendarService {
             try {
                 getCalendar(user.getgMail()).events().insert("primary", event).execute();
             } catch (IOException e) {
-                System.out.println(e.getMessage());
-                e.printStackTrace();
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        ErrorMessages.GOOGLE_CALENDAR_EVENTS_ADD.toString());
             }
         });
         return event;

@@ -1,0 +1,228 @@
+2019-01-15 11:42:08.435  INFO 7166 --- [main] c.r.w.w.WebserviceExampleApplication     : Starting WebserviceExampleApplication on robin-HP-EliteBook-8570w with PID 7166 (/home/robin/Desktop/intellij-projects/Movienight/target/classes started by robin in /home/robin/Desktop/intellij-projects/Movienight)
+2019-01-15 11:42:08.437  INFO 7166 --- [main] c.r.w.w.WebserviceExampleApplication     : No active profile set, falling back to default profiles: default
+2019-01-15 11:42:09.069  INFO 7166 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-15 11:42:09.130  INFO 7166 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54ms. Found 2 repository interfaces.
+2019-01-15 11:42:09.405  INFO 7166 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e8f552f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-15 11:42:09.628  INFO 7166 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-15 11:42:09.640  INFO 7166 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-15 11:42:09.640  INFO 7166 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-01-15 11:42:09.645  INFO 7166 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-15 11:42:09.711  INFO 7166 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-15 11:42:09.712  INFO 7166 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1236 ms
+2019-01-15 11:42:09.743  INFO 7166 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-15 11:42:09.744  INFO 7166 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-15 11:42:09.744  INFO 7166 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-01-15 11:42:09.744  INFO 7166 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-15 11:42:09.744  INFO 7166 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-15 11:42:09.745  INFO 7166 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-01-15 11:42:09.835  INFO 7166 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-15 11:42:09.960  INFO 7166 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-15 11:42:09.990  INFO 7166 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-15 11:42:10.028  INFO 7166 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-15 11:42:10.029  INFO 7166 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-15 11:42:10.112  INFO 7166 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-15 11:42:10.195  INFO 7166 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-15 11:42:10.602  INFO 7166 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:42:11.035  INFO 7166 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37314843, org.springframework.security.web.context.SecurityContextPersistenceFilter@1eb9bf60, org.springframework.security.web.header.HeaderWriterFilter@31881aa2, org.springframework.security.web.authentication.logout.LogoutFilter@3d1c933, com.robin.ws.webserviceexample.security.AuthenticationFilter@50122012, com.robin.ws.webserviceexample.security.AuthorizationFilter@569348e1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@38811103, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79e10fb4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7db5b890, org.springframework.security.web.session.SessionManagementFilter@cf01c2e, org.springframework.security.web.access.ExceptionTranslationFilter@60deefed, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@74e497ae]
+2019-01-15 11:42:11.160  INFO 7166 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:42:11.187  WARN 7166 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-15 11:42:11.241  INFO 7166 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-01-15 11:42:11.335  INFO 7166 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-15 11:42:11.337  INFO 7166 --- [main] c.r.w.w.WebserviceExampleApplication     : Started WebserviceExampleApplication in 3.206 seconds (JVM running for 3.663)
+2019-01-15 11:42:14.267  INFO 7166 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-15 11:42:14.267  INFO 7166 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-15 11:42:14.274  INFO 7166 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-01-15 11:42:14.448  INFO 7166 --- [http-nio-8080-exec-2] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:42:14.447Z
+2019-01-15 11:42:14.735  INFO 7166 --- [http-nio-8080-exec-2] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=288
+2019-01-15 11:42:17.142  INFO 7166 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:42:17.142Z
+2019-01-15 11:42:17.188  INFO 7166 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=46
+2019-01-15 11:46:56.714  INFO 7166 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:46:56.716  INFO 7166 --- [Thread-10] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:46:56.719  INFO 7166 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-15 11:46:56.722  INFO 7166 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-15 11:46:58.954  INFO 7665 --- [main] c.r.w.w.WebserviceExampleApplication     : Starting WebserviceExampleApplication on robin-HP-EliteBook-8570w with PID 7665 (/home/robin/Desktop/intellij-projects/Movienight/target/classes started by robin in /home/robin/Desktop/intellij-projects/Movienight)
+2019-01-15 11:46:58.957  INFO 7665 --- [main] c.r.w.w.WebserviceExampleApplication     : No active profile set, falling back to default profiles: default
+2019-01-15 11:46:59.655  INFO 7665 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-15 11:46:59.714  INFO 7665 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54ms. Found 2 repository interfaces.
+2019-01-15 11:46:59.996  INFO 7665 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1ef64b04] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-15 11:47:00.225  INFO 7665 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-15 11:47:00.238  INFO 7665 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-15 11:47:00.239  INFO 7665 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-01-15 11:47:00.244  INFO 7665 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-15 11:47:00.311  INFO 7665 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-15 11:47:00.311  INFO 7665 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1287 ms
+2019-01-15 11:47:00.343  INFO 7665 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-15 11:47:00.343  INFO 7665 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-15 11:47:00.343  INFO 7665 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-01-15 11:47:00.343  INFO 7665 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-15 11:47:00.344  INFO 7665 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-15 11:47:00.344  INFO 7665 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-01-15 11:47:00.435  INFO 7665 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-15 11:47:00.594  INFO 7665 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-15 11:47:00.629  INFO 7665 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-15 11:47:00.671  INFO 7665 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-15 11:47:00.672  INFO 7665 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-15 11:47:00.752  INFO 7665 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-15 11:47:00.833  INFO 7665 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-15 11:47:01.236  INFO 7665 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:47:01.644  INFO 7665 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69d103f0, org.springframework.security.web.context.SecurityContextPersistenceFilter@71789580, org.springframework.security.web.header.HeaderWriterFilter@795b66d, org.springframework.security.web.authentication.logout.LogoutFilter@25ad25f5, com.robin.ws.webserviceexample.security.AuthenticationFilter@5b742bc8, com.robin.ws.webserviceexample.security.AuthorizationFilter@74fb5b59, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@165614f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16f15ae9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@130a6eb9, org.springframework.security.web.session.SessionManagementFilter@1068176, org.springframework.security.web.access.ExceptionTranslationFilter@433ef204, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d60059f]
+2019-01-15 11:47:01.766  INFO 7665 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:47:01.792  WARN 7665 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-15 11:47:01.847  INFO 7665 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-01-15 11:47:01.938  INFO 7665 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-15 11:47:01.940  INFO 7665 --- [main] c.r.w.w.WebserviceExampleApplication     : Started WebserviceExampleApplication in 3.325 seconds (JVM running for 3.757)
+2019-01-15 11:47:04.387  INFO 7665 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-15 11:47:04.387  INFO 7665 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-15 11:47:04.393  INFO 7665 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-01-15 11:47:04.582  INFO 7665 --- [http-nio-8080-exec-1] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:47:04.581Z
+2019-01-15 11:47:04.849  INFO 7665 --- [http-nio-8080-exec-1] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=268
+2019-01-15 11:47:31.226  INFO 7665 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:47:31.226Z
+2019-01-15 11:47:31.290  INFO 7665 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=64
+2019-01-15 11:47:31.850  INFO 7665 --- [http-nio-8080-exec-4] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:47:31.850Z
+2019-01-15 11:47:31.888  INFO 7665 --- [http-nio-8080-exec-4] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=38
+2019-01-15 11:47:32.208  INFO 7665 --- [http-nio-8080-exec-5] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:47:32.208Z
+2019-01-15 11:47:32.262  INFO 7665 --- [http-nio-8080-exec-5] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=54
+2019-01-15 11:47:32.569  INFO 7665 --- [http-nio-8080-exec-6] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:47:32.569Z
+2019-01-15 11:47:32.611  INFO 7665 --- [http-nio-8080-exec-6] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=42
+2019-01-15 11:47:32.925  INFO 7665 --- [http-nio-8080-exec-7] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:47:32.925Z
+2019-01-15 11:47:32.962  INFO 7665 --- [http-nio-8080-exec-7] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=37
+2019-01-15 11:47:58.300  INFO 7665 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:47:58.303  INFO 7665 --- [Thread-10] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:47:58.307  INFO 7665 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-15 11:47:58.312  INFO 7665 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-15 11:47:59.933  INFO 7847 --- [main] c.r.w.w.WebserviceExampleApplication     : Starting WebserviceExampleApplication on robin-HP-EliteBook-8570w with PID 7847 (/home/robin/Desktop/intellij-projects/Movienight/target/classes started by robin in /home/robin/Desktop/intellij-projects/Movienight)
+2019-01-15 11:47:59.936  INFO 7847 --- [main] c.r.w.w.WebserviceExampleApplication     : No active profile set, falling back to default profiles: default
+2019-01-15 11:48:00.588  INFO 7847 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-15 11:48:00.653  INFO 7847 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58ms. Found 2 repository interfaces.
+2019-01-15 11:48:00.979  INFO 7847 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b30d8ae0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-15 11:48:01.194  INFO 7847 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-15 11:48:01.207  INFO 7847 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-15 11:48:01.207  INFO 7847 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-01-15 11:48:01.212  INFO 7847 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-15 11:48:01.278  INFO 7847 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-15 11:48:01.278  INFO 7847 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1305 ms
+2019-01-15 11:48:01.310  INFO 7847 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-15 11:48:01.310  INFO 7847 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-15 11:48:01.310  INFO 7847 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-01-15 11:48:01.310  INFO 7847 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-15 11:48:01.311  INFO 7847 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-15 11:48:01.311  INFO 7847 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-01-15 11:48:01.402  INFO 7847 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-15 11:48:01.562  INFO 7847 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-15 11:48:01.594  INFO 7847 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-15 11:48:01.634  INFO 7847 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-15 11:48:01.635  INFO 7847 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-15 11:48:01.715  INFO 7847 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-15 11:48:01.799  INFO 7847 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-15 11:48:02.215  INFO 7847 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:48:02.625  INFO 7847 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@69f080ad, org.springframework.security.web.context.SecurityContextPersistenceFilter@49754e74, org.springframework.security.web.header.HeaderWriterFilter@73bb573d, org.springframework.security.web.authentication.logout.LogoutFilter@74697863, com.robin.ws.webserviceexample.security.AuthenticationFilter@6568f998, com.robin.ws.webserviceexample.security.AuthorizationFilter@45d4421d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b46392c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4cc8d70d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@782fd504, org.springframework.security.web.session.SessionManagementFilter@736b21ee, org.springframework.security.web.access.ExceptionTranslationFilter@2b0454d2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@c97721b]
+2019-01-15 11:48:02.750  INFO 7847 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:48:02.780  WARN 7847 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-15 11:48:02.840  INFO 7847 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-01-15 11:48:02.948  INFO 7847 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-15 11:48:02.950  INFO 7847 --- [main] c.r.w.w.WebserviceExampleApplication     : Started WebserviceExampleApplication in 3.32 seconds (JVM running for 3.803)
+2019-01-15 11:48:33.360  INFO 7847 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-15 11:48:33.360  INFO 7847 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-15 11:48:33.377  INFO 7847 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2019-01-15 11:48:33.559  INFO 7847 --- [http-nio-8080-exec-2] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:48:33.558Z
+2019-01-15 11:48:33.841  INFO 7847 --- [http-nio-8080-exec-2] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=283
+2019-01-15 11:48:34.153  INFO 7847 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:48:34.153Z
+2019-01-15 11:48:34.203  INFO 7847 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=50
+2019-01-15 11:48:34.481  INFO 7847 --- [http-nio-8080-exec-4] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:48:34.481Z
+2019-01-15 11:48:34.521  INFO 7847 --- [http-nio-8080-exec-4] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=40
+2019-01-15 11:48:34.841  INFO 7847 --- [http-nio-8080-exec-5] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:48:34.841Z
+2019-01-15 11:48:34.918  INFO 7847 --- [http-nio-8080-exec-5] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=77
+2019-01-15 11:49:09.167  INFO 7847 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:49:09.170  INFO 7847 --- [Thread-10] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:49:09.174  INFO 7847 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-15 11:49:09.177  INFO 7847 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-15 11:49:11.391  INFO 8177 --- [main] c.r.w.w.WebserviceExampleApplication     : Starting WebserviceExampleApplication on robin-HP-EliteBook-8570w with PID 8177 (/home/robin/Desktop/intellij-projects/Movienight/target/classes started by robin in /home/robin/Desktop/intellij-projects/Movienight)
+2019-01-15 11:49:11.395  INFO 8177 --- [main] c.r.w.w.WebserviceExampleApplication     : No active profile set, falling back to default profiles: default
+2019-01-15 11:49:12.046  INFO 8177 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-15 11:49:12.107  INFO 8177 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56ms. Found 2 repository interfaces.
+2019-01-15 11:49:12.397  INFO 8177 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e67d4d65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-15 11:49:12.604  INFO 8177 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-15 11:49:12.616  INFO 8177 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-15 11:49:12.617  INFO 8177 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-01-15 11:49:12.622  INFO 8177 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-15 11:49:12.691  INFO 8177 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-15 11:49:12.692  INFO 8177 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1253 ms
+2019-01-15 11:49:12.724  INFO 8177 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-15 11:49:12.725  INFO 8177 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-15 11:49:12.725  INFO 8177 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-01-15 11:49:12.725  INFO 8177 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-15 11:49:12.725  INFO 8177 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-15 11:49:12.726  INFO 8177 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-01-15 11:49:12.823  INFO 8177 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-15 11:49:12.900  INFO 8177 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-15 11:49:13.012  INFO 8177 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-15 11:49:13.054  INFO 8177 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-15 11:49:13.055  INFO 8177 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-15 11:49:13.130  INFO 8177 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-15 11:49:13.211  INFO 8177 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-15 11:49:13.610  INFO 8177 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:49:14.026  INFO 8177 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a88c4f5, org.springframework.security.web.context.SecurityContextPersistenceFilter@63917fe1, org.springframework.security.web.header.HeaderWriterFilter@73d62b5, org.springframework.security.web.authentication.logout.LogoutFilter@401e02b4, com.robin.ws.webserviceexample.security.AuthenticationFilter@1894fa9f, com.robin.ws.webserviceexample.security.AuthorizationFilter@1144a02b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@677349fb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2776fd8f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26a4f9ed, org.springframework.security.web.session.SessionManagementFilter@76ac68b0, org.springframework.security.web.access.ExceptionTranslationFilter@4d7cac24, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ace6346]
+2019-01-15 11:49:14.159  INFO 8177 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:49:14.206  WARN 8177 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-15 11:49:14.265  INFO 8177 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-01-15 11:49:14.352  INFO 8177 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-15 11:49:14.354  INFO 8177 --- [main] c.r.w.w.WebserviceExampleApplication     : Started WebserviceExampleApplication in 3.292 seconds (JVM running for 3.713)
+2019-01-15 11:49:19.970  INFO 8177 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-15 11:49:19.971  INFO 8177 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-15 11:49:19.976  INFO 8177 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-01-15 11:49:20.149  INFO 8177 --- [http-nio-8080-exec-2] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:49:20.149Z
+2019-01-15 11:49:20.412  INFO 8177 --- [http-nio-8080-exec-2] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=264
+2019-01-15 11:49:21.897  INFO 8177 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:49:21.897Z
+2019-01-15 11:49:21.939  INFO 8177 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=42
+2019-01-15 11:51:13.722  INFO 8177 --- [Thread-10] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:51:13.725  INFO 8177 --- [Thread-10] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:51:13.729  INFO 8177 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-01-15 11:51:13.732  INFO 8177 --- [Thread-10] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-01-15 11:51:15.984  INFO 8476 --- [main] c.r.w.w.WebserviceExampleApplication     : Starting WebserviceExampleApplication on robin-HP-EliteBook-8570w with PID 8476 (/home/robin/Desktop/intellij-projects/Movienight/target/classes started by robin in /home/robin/Desktop/intellij-projects/Movienight)
+2019-01-15 11:51:15.987  INFO 8476 --- [main] c.r.w.w.WebserviceExampleApplication     : No active profile set, falling back to default profiles: default
+2019-01-15 11:51:16.630  INFO 8476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-01-15 11:51:16.692  INFO 8476 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56ms. Found 2 repository interfaces.
+2019-01-15 11:51:16.977  INFO 8476 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e8f552f5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-01-15 11:51:17.183  INFO 8476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-01-15 11:51:17.196  INFO 8476 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-01-15 11:51:17.197  INFO 8476 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-01-15 11:51:17.202  INFO 8476 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-15 11:51:17.267  INFO 8476 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-01-15 11:51:17.267  INFO 8476 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1237 ms
+2019-01-15 11:51:17.298  INFO 8476 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-01-15 11:51:17.299  INFO 8476 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-01-15 11:51:17.299  INFO 8476 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'formContentFilter' to: [/*]
+2019-01-15 11:51:17.299  INFO 8476 --- [main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2019-01-15 11:51:17.299  INFO 8476 --- [main] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2019-01-15 11:51:17.300  INFO 8476 --- [main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-01-15 11:51:17.388  INFO 8476 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-01-15 11:51:17.550  INFO 8476 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-01-15 11:51:17.580  INFO 8476 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-01-15 11:51:17.620  INFO 8476 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-01-15 11:51:17.621  INFO 8476 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-01-15 11:51:17.698  INFO 8476 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-01-15 11:51:17.777  INFO 8476 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-01-15 11:51:18.176  INFO 8476 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-01-15 11:51:18.592  INFO 8476 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@45d4421d, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b46392c, org.springframework.security.web.header.HeaderWriterFilter@736b21ee, org.springframework.security.web.authentication.logout.LogoutFilter@2bba35ef, com.robin.ws.webserviceexample.security.AuthenticationFilter@782fd504, com.robin.ws.webserviceexample.security.AuthorizationFilter@1537c744, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f15f52a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@101330ad, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@37314843, org.springframework.security.web.session.SessionManagementFilter@49754e74, org.springframework.security.web.access.ExceptionTranslationFilter@73bb573d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35fa450f]
+2019-01-15 11:51:18.723  INFO 8476 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-15 11:51:18.751  WARN 8476 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-01-15 11:51:18.808  INFO 8476 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2019-01-15 11:51:18.915  INFO 8476 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-01-15 11:51:18.917  INFO 8476 --- [main] c.r.w.w.WebserviceExampleApplication     : Started WebserviceExampleApplication in 3.267 seconds (JVM running for 3.688)
+2019-01-15 11:51:23.843  INFO 8476 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-15 11:51:23.843  INFO 8476 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-01-15 11:51:23.850  INFO 8476 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-01-15 11:51:24.041  INFO 8476 --- [http-nio-8080-exec-1] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:51:24.040Z:: USER=test@test.com
+2019-01-15 11:51:24.323  INFO 8476 --- [http-nio-8080-exec-1] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=284
+2019-01-15 11:51:25.812  INFO 8476 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Start Time=2019-01-15T10:51:25.812Z:: USER=test@test.com
+2019-01-15 11:51:25.855  INFO 8476 --- [http-nio-8080-exec-3] c.r.w.w.interceptor.Interceptor          : Request URL::http://localhost:8080/movieByTitle:: Time Taken=43
