@@ -22,6 +22,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -56,7 +59,7 @@ public class CalendarService {
             System.out.println(user.getEmail());
             Events events = null;
             try {
-                Calendar calendar = getCalendar(user.getEmail());
+                Calendar calendar = getCalendar(user.getgMail());
                 events = calendar.events().list("primary")
                         .setTimeMin(now)
                         .setTimeMax(max)
@@ -135,6 +138,7 @@ public class CalendarService {
                 }
             }
         });
+
         return freeEvents;
     }
 
@@ -154,10 +158,10 @@ public class CalendarService {
                 .build();
     }
 
-    public com.google.api.services.calendar.model.Event bookEvent(String summary, String startTimeString,
-                                                                  String createdByGmail) {
+    public com.google.api.services.calendar.model.Event bookEvent(String summary, String startTimeString) {
         updateAllTokens();
         List<UserEntity> users = (List<UserEntity>) userRepository.findAll();
+        UserEntity currentUser = userRepository.findUserByEmail(getCurrentUser());
         List<EventAttendee> allAttendees = new ArrayList<>();
         com.google.api.services.calendar.model.Event event = new com.google.api.services.calendar.model.Event();
         org.joda.time.DateTime jodaDateTime = convertStringToDateTime(startTimeString).plusHours(18);
@@ -179,7 +183,7 @@ public class CalendarService {
                     .setDateTime(endDateTime);
             event.setEnd(eventDateTimeEnd);
 
-            if (!user.getgMail().equals(createdByGmail)) {
+            if (!user.getgMail().equals(currentUser.getgMail())) {
                 allAttendees.add(new EventAttendee().setEmail(user.getgMail()));
                 event.setAttendees(allAttendees);
             }
@@ -211,6 +215,17 @@ public class CalendarService {
             e.printStackTrace();
             return null;
         }
+    }
+
+    private String getCurrentUser() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername();
+        } else {
+            username = principal.toString();
+        }
+        return username;
     }
 
 
