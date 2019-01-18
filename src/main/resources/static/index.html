@@ -11,6 +11,9 @@
 <body>
 <button id="signinButton">Link my Google Calendar</button>
 
+<br>
+<br>
+
 <form id="loginForm">
 
     <label for="email">Email</label>
@@ -22,6 +25,10 @@
     <input type="submit" id="login" value="Login"/>
 
 </form>
+
+<br>
+<br>
+
 
 <form id="registerForm">
 
@@ -41,6 +48,37 @@
 
 </form>
 
+<br>
+<br>
+<br>
 
+<p>
+Oauth2:
+Är ett "Authorization protocol" som bygger vidare på Oauth 1
+Det är när man använder sig av en annan "authentication provider" än en själv för att authentisera användare,
+t.ex så finns det google,facebook, twitter osv
+Det fungerar som så att man registrear sin applikation hos tredje part och får tillbaka "clientID" och clientSecret"
+som man sen anger i sin applikation för att ha möjligheten att få användare att kunna authentisera sig mot tredje part
+via ens egen applikation.
+En klar och uppenbar fördel är att man slipper skapa en egen "Authentication" vilket sparar mycket tid, man får
+även tillgång till uppgifter om användaren beroende på vad man har fått användaren till att godkänna t.ex google
+calendar,
+facebook profile osv.
+<br>
+<br>
+JWT:
+JsonWebToken är ett verktyg man använder för att på ett säkert sätt kommunisera mellan client(användare) och server
+så att servern kan vara säker på att användaren är den han/hon utger sig för att vara.
+Det som gör det säkert är att token encodas & decodas digitalt med hjälp utav en token secret så användaren kommer inte
+kunna lista ut algoritmen för att t.ex skapa "fake tokens" och låtsas vara någon annan än han/hon är.
+    <br>
+    <br>
+HTTPS:
+Hypertext Transfer Protocol Secure är som HTTP fast datan som skickas är krypterad vilket gör det säkert.
+Detta är speciellt användbart ifall applikationen/sidan använder känslig data som t.ex banköverföringar, lösenord osv.
+Ifall en användare sitter på ett publikt nätverk och applikationen inte använder https så kan vem som helst på samma
+nätverk se all data traffik från och till appen.
+Tydligen skapades protokollet av Netscape :P
+</p>
 </body>
 </html>
