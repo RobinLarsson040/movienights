@@ -18,7 +18,12 @@ function start() {
 }
 
 $('#signinButton').click(function () {
-    auth2.grantOfflineAccess().then(signInCallback);
+    if(localStorage.getItem("Authorization") !== null){
+        auth2.grantOfflineAccess().then(signInCallback);
+    }else{
+        alert("YOU MUST SIGN IN BEFORE LINKING YOUR GOOGLE ACCOUNT")
+    }
+
 });
 
 $('#loginForm').submit(function (e) {
@@ -46,10 +51,35 @@ $('#loginForm').submit(function (e) {
 
         },
         error: function (request, textStatus, errorThrown) {
-            alert(request.getResponseHeader('some_header'));
+            alert("WRONG USERNAME OR PASSWORD");
         }
     });
+});
 
+$('#registerForm').submit(function (e) {
+    e.preventDefault();
+    console.log("REGISTER");
+    $.ajax({
+        type: "POST",
+        url: 'http://localhost:8080/users',
+        data: JSON.stringify({
+            email: $("#emailRegister").val(),
+            password: $("#passwordRegister").val(),
+            firstName: $("#firstNameRegister").val(),
+            lastName: $("#lastNameRegister").val()
+        }),
+        contentType: 'application/json',
+        processData: false,
+        success: function (data, textStatus, request) {
+
+            $('#registerForm').attr('style', 'display: none');
+
+        },
+        error: function (request, textStatus, errorThrown) {
+            alert(textStatus);
+            alert(errorThrown);
+        }
+    });
 });
 
 function signInCallback(authResult) {

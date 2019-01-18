@@ -36,11 +36,14 @@ public class Interceptor extends HandlerInterceptorAdapter {
             HttpServletResponse response,
             Object handler,
             Exception ex) {
+        if (request != null) {
+            long startTime = (Long) request.getAttribute("startTime");
+            logger.info("Request URL::" + request.getRequestURL().toString() +
+                    ":: Time Taken=" + (Instant.now().toEpochMilli() - startTime));
+        }
 
-        long startTime = (Long) request.getAttribute("startTime");
 
-        logger.info("Request URL::" + request.getRequestURL().toString() +
-                ":: Time Taken=" + (Instant.now().toEpochMilli() - startTime));
+
 
     }
 
