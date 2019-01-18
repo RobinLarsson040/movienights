@@ -22,7 +22,7 @@ public class GoogleController {
     @Value("${client-secret}")
     private String CLIENT_SECRET;
 
-    final  UserRepository userRepository;
+    final UserRepository userRepository;
 
     @Autowired
     public GoogleController(UserRepository userRepository) {
@@ -74,10 +74,6 @@ public class GoogleController {
 
 
         userRepository.save(userEntity);
-
-        System.out.println("accessToken: " + accessToken);
-        System.out.println("refreshToken: " + refreshToken);
-        System.out.println("expiresAt: " + expiresAt);
 
         return "OK";
     }

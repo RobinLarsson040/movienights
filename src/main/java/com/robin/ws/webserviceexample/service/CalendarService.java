@@ -56,7 +56,6 @@ public class CalendarService {
         updateAllTokens();
 
         users.forEach(user -> {
-            System.out.println(user.getEmail());
             Events events = null;
             try {
                 Calendar calendar = getCalendar(user.getgMail());
@@ -92,7 +91,6 @@ public class CalendarService {
                 try {
                     newCredentials = refreshCredentials(user.getRefreshToken());
                 } catch (IOException e) {
-                    System.out.println("ERROR");
                     e.printStackTrace();
                 }
                 user.setAccesToken(newCredentials.getAccessToken());
@@ -169,7 +167,6 @@ public class CalendarService {
         DateTime startTime = new DateTime(jodaDateTime.toString());
 
         users.forEach(user -> {
-            System.out.println(user.getgMail());
             event.setSummary(summary);
             event.setDescription("MovieNight");
             EventDateTime start = new EventDateTime()
@@ -211,7 +208,6 @@ public class CalendarService {
                     .execute();
             return new GoogleCredential().setAccessToken(response.getAccessToken());
         } catch (IOException e) {
-            System.out.println(e.getMessage());
             e.printStackTrace();
             return null;
         }
